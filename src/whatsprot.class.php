@@ -2801,7 +2801,8 @@ class WhatsProt
                 }
 
                 if ($autoReceipt) {
-                    $this->sendReceipt($node, $type);
+                    $author = $node->getAttribute("participant");
+                    $this->sendReceipt($node, $type, $author);
                 }
             }
             if ($node->getChild('received') != null) {
